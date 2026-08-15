@@ -1,0 +1,19 @@
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+
+    name VARCHAR(255) NOT NULL,
+
+    email VARCHAR(255) NOT NULL UNIQUE,
+
+    password VARCHAR(255) NOT NULL,
+
+    active BOOLEAN NOT NULL DEFAULT TRUE,
+
+    role_id BIGINT NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_user_role
+        FOREIGN KEY(role_id)
+        REFERENCES roles(id)
+);
