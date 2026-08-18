@@ -1,0 +1,18 @@
+CREATE TABLE condominiums (
+
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+
+    name VARCHAR(255) NOT NULL,
+
+    cnpj VARCHAR(20) NOT NULL UNIQUE,
+
+    email VARCHAR(255),
+
+    phone VARCHAR(30),
+
+    address VARCHAR(500),
+
+    status VARCHAR(50) NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
