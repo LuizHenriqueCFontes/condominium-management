@@ -1,3 +1,4 @@
+
 package com.condominium.management.resident.dto;
 
 import jakarta.validation.constraints.NotBlank;
