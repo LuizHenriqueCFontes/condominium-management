@@ -4,7 +4,6 @@ import {
     ChevronLeft,
     ChevronRight,
     CircleDollarSign,
-    FileText,
     Home,
     LogOut,
     Receipt,
@@ -65,12 +64,7 @@ export default function Sidebar({
             label: "Despesas",
             path: "/expenses",
             icon: Receipt,
-        },
-        {
-            label: "Cobranças",
-            path: "/charges",
-            icon: FileText,
-        },
+        }
     ];
 
     return (
