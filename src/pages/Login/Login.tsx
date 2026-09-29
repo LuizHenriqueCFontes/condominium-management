@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-import api from "../../services/api";
 import { useAuth } from "../../contexts/AuthContext";
 import type {
-    LoginRequest,
-    LoginResponse,
+    LoginRequest
 } from "../../types/auth";
+import authService from "../../services/authService";
 
 export default function Login() {
 
@@ -34,12 +33,9 @@ export default function Login() {
 
         try {
 
-            const response = await api.post<LoginResponse>(
-                "/api/auth/login",
-                data
-            );
+            const response = await authService.authenticate(data);
 
-            login(response.data.token);
+            login(response.token);
 
             navigate("/dashboard");
 
