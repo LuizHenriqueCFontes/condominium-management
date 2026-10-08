@@ -157,15 +157,7 @@ Os testes ajudam a verificar o comportamento dos serviços e a reduzir regressõ
 
 ## 🌐 Deploy
 
-O frontend pode ser publicado em uma plataforma de hospedagem compatível com aplicações Vite, como a Vercel.
-
-Para o ambiente de produção:
-
-1. Configure o repositório do frontend na plataforma de hospedagem.
-2. Configure o comando de build como `npm run build`.
-3. Configure o diretório de saída como `dist`.
-4. Defina a variável `VITE_API_URL` com o endereço público do backend.
-5. Verifique as configurações de CORS do backend para permitir as requisições originadas do domínio do frontend.
+O frontend do sistema se encontra no vercel: https://condominium-management-three.vercel.app
 
 ## 🛠️ Boas práticas aplicadas
 
