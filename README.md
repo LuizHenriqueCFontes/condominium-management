@@ -152,8 +152,58 @@ O comando depende da configuração definida no `package.json`. Caso o script `t
 ```bash
 npx jest
 ```
-
 Os testes ajudam a verificar o comportamento dos serviços e a reduzir regressões durante a evolução da aplicação.
+
+## 🧪 Testes de Integração
+
+O projeto utiliza Playwright Test para executar testes de integração HTTP contra a API REST do Condominium Management.
+
+### Pré-requisitos
+
+- Node.js e npm instalados.
+- Backend Spring Boot em execução.
+- Banco de dados local configurado.
+- Usuário previamente cadastrado para o teste de autenticação.
+
+### Instalação
+
+Instale as dependências do projeto e o Playwright Test:
+
+```bash
+npm install
+npm install -D @playwright/test
+```
+
+### Configuração
+
+O endereço padrão da API é `http://localhost:8080`. Para utilizar outro endereço, configure a variável `API_BASE_URL`.
+
+Defina também `TEST_USER_EMAIL` e `TEST_USER_PASSWORD` com as credenciais de um usuário de teste cadastrado na API.
+
+### Execução
+
+Execute a suíte de testes:
+
+```bash
+npx playwright test
+```
+
+### Relatório
+
+Após a execução, abra o relatório HTML com:
+
+```bash
+npx playwright show-report
+```
+
+### Funcionalidades testadas
+
+- **Autenticação:** login com credenciais válidas e validação do token JWT retornado.
+- **Autenticação inválida:** rejeição de credenciais incorretas.
+- **Consulta de condomínios:** validação do status HTTP, da estrutura dos dados e da unicidade dos identificadores.
+
+Os testes realizam requisições HTTP contra a API em execução, verificando respostas reais do backend.
+
 
 ## 🌐 Deploy
 
