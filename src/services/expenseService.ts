@@ -7,7 +7,7 @@ import type {
 const expenseService = {
     async findAll(): Promise<Expense[]> {
         const response = await api.get<Expense[]>(
-            "api/expenses"
+            "/api/expenses"
         );
 
         return response.data;
@@ -15,7 +15,7 @@ const expenseService = {
 
     async findById(id: number): Promise<Expense> {
         const response = await api.get<Expense>(
-            `api/expenses/${id}`
+            `/api/expenses/${id}`
         );
 
         return response.data;
@@ -25,7 +25,7 @@ const expenseService = {
         data: ExpenseRequest
     ): Promise<Expense> {
         const response = await api.post<Expense>(
-            "/expenses",
+            "/api/expenses",
             data
         );
 
@@ -37,7 +37,7 @@ const expenseService = {
         data: ExpenseRequest
     ): Promise<Expense> {
         const response = await api.put<Expense>(
-            `api/expenses/${id}`,
+            `/api/expenses/${id}`,
             data
         );
 
@@ -45,7 +45,7 @@ const expenseService = {
     },
 
     async delete(id: number): Promise<void> {
-        await api.delete(`/expenses/${id}`);
+        await api.delete(`/api/expenses/${id}`);
     },
 };
 
